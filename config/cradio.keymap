@@ -59,9 +59,9 @@
 
         layer2 {
             bindings = <
-&trans          &trans            &trans        &trans            &trans    &trans      &trans         &trans        &trans       &trans
-&kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &trans    &kp LEFT    &kp DOWN       &kp UP_ARROW  &kp RIGHT    &trans
-&kp MINUS       &kp LS(UNDER)     &kp EQUAL     &kp LS(PLUS)      &trans    &kp SEMI    &kp LS(COLON)  &kp SQT       &kp LS(DQT)  &trans
+&trans          &trans            &trans        &trans            &trans    &trans      &trans         &kp LG(LS(LEFT_BRACKET))  &kp LS(LG(RIGHT_BRACKET))  &trans
+&kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &trans    &kp LEFT    &kp DOWN       &kp UP_ARROW              &kp RIGHT                  &trans
+&kp MINUS       &kp LS(UNDER)     &kp EQUAL     &kp LS(PLUS)      &trans    &kp SEMI    &kp LS(COLON)  &kp SQT                   &kp LS(DQT)                &trans
                                                 &trans            &trans    &kp DELETE  &kp ENTER
             >;
         };
