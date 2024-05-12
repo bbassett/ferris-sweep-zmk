@@ -70,7 +70,7 @@
             bindings = <
 &trans  &trans     &trans  &trans     &trans       &trans     &trans     &trans     &trans     &trans
 &trans  &kp RG(S)  &trans  &trans     &trans       &kp RG(H)  &kp RG(J)  &kp RG(K)  &kp RG(L)  &trans
-&trans  &trans     &trans  &trans     &trans       &trans     &trans     &trans     &trans     &trans
+&trans  &trans     &trans  &trans     &trans       &trans     &kp RG(V)  &kp RG(R)  &trans     &trans
                            &kp RG(F)  &kp RG(D)    &kp RG(V)  &kp RG(R)
             >;
         };
