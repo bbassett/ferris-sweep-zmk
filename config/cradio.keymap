@@ -35,9 +35,9 @@
             key-positions = <32 31>;
         };
 
-        mouse_trigger {
-            bindings = <&mo 4>;
-            key-positions = <30 33>;
+        layer2 {
+            bindings = <&mo 2>;
+            key-positions = <33 30>;
         };
     };
 
@@ -46,10 +46,10 @@
 
         default_layer {
             bindings = <
-&kp Q        &kp W        &kp E       &kp R       &kp T        &kp Y            &kp U           &kp I       &kp O        &kp P
-&hm LSHFT A  &hm LCTRL S  &hm LALT D  &hm LCMD F  &kp G        &kp H            &hm LCMD J      &hm RALT K  &hm RCTRL L  &hm RSHFT ENTER
-&kp Z        &kp X        &kp C       &kp V       &kp B        &kp N            &kp M           &kp COMMA   &kp DOT      &kp FSLH
-                                      &lt 1 ESC   &lt 2 TAB    &lt 3 BACKSPACE  &mt CAPS SPACE
+&kp Q        &kp W        &kp E       &kp R       &kp T           &kp Y            &kp U        &kp I       &kp O        &kp P
+&hm LSHFT A  &hm LCTRL S  &hm LALT D  &hm LCMD F  &kp G           &kp H            &hm LCMD J   &hm RALT K  &hm RCTRL L  &hm RSHFT ENTER
+&kp Z        &kp X        &kp C       &kp V       &kp B           &kp N            &kp M        &kp COMMA   &kp DOT      &kp FSLH
+                                      &lt 1 ESC   &mt CAPS TAB    &lt 3 BACKSPACE  &lt 4 SPACE
             >;
         };
 
