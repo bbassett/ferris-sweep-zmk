@@ -78,10 +78,10 @@
 
         symbols {
             bindings = <
-&kp EXCL     &kp AT_SIGN  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp TILDE         &kp MINUS      &kp PLUS           &kp EQUAL      &none  &none
+&kp EXCL     &kp AT_SIGN  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp TILDE         &kp MINUS      &kp PLUS           &kp EQUAL      &none  &kp LG(DELETE)
 &kp HASH     &kp DOLLAR   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE    &kp SEMICOLON  &kp COLON          &kp PIPE       &none  &none
 &kp PERCENT  &kp CARET    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp GRAVE         &kp SQT        &kp DOUBLE_QUOTES  &kp BACKSLASH  &none  &none
-                                                &none                  &none             &kp DELETE     &none
+                                                &none                  &kp DELETE        &none          &none
             >;
         };
 
