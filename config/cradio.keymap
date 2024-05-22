@@ -34,10 +34,28 @@
             bindings = <&mo 5>;
             key-positions = <32 31>;
         };
+    };
 
-        layer2 {
-            bindings = <&mo 2>;
-            key-positions = <33 30>;
+    macros {
+        personal_email: personal_email {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp B &kp A &kp S &kp S &kp E &kp T &kp T &kp DOT &kp B &kp R &kp A &kp N &kp D &kp O &kp N &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "PERSONAL_EMAIL";
+        };
+
+        simplecast_email: simplecast_email {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp B &kp R &kp A &kp N &kp D &kp O &kp N &kp AT &kp S &kp I &kp M &kp P &kp L &kp E &kp C &kp A &kp S &kp T &kp DOT &kp C &kp O &kp M>;
+            label = "SIMPLECAST_EMAIL";
+        };
+
+        adswizz_email: adswizz_email {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp B &kp R &kp A &kp N &kp D &kp O &kp N &kp DOT &kp B &kp A &kp S &kp S &kp E &kp T &kp T &kp AT &kp A &kp D &kp S &kp W &kp I &kp Z &kp Z &kp DOT &kp C &kp O &kp M>;
+            label = "ADSWIZZ_EMAIL";
         };
     };
 
@@ -46,55 +64,55 @@
 
         default_layer {
             bindings = <
-&kp Q        &kp W        &kp E       &kp R            &kp T        &kp Y            &kp U        &kp I       &kp O        &kp P
-&hm LSHFT A  &hm LCTRL S  &hm LALT D  &hm LCMD F       &kp G        &kp H            &hm LCMD J   &hm RALT K  &hm RCTRL L  &hm RSHFT ENTER
-&kp Z        &kp X        &kp C       &kp V            &kp B        &kp N            &kp M        &kp COMMA   &kp DOT      &kp FSLH
-                                      &mt CAPS ESCAPE  &lt 3 TAB    &lt 4 BACKSPACE  &lt 1 SPACE
+&kp Q             &kp W        &kp E       &kp R         &kp T        &kp Y            &kp U        &kp I       &kp O        &kp P
+&mt CAPS A        &hm LCTRL S  &hm LALT D  &hm LCMD F    &kp G        &kp H            &hm LCMD J   &hm RALT K  &hm RCTRL L  &lt 1 ENTER
+&hm LEFT_SHIFT Z  &kp X        &kp C       &kp V         &kp B        &kp N            &kp M        &kp COMMA   &kp DOT      &hm RIGHT_SHIFT SLASH
+                                           &lt 2 ESCAPE  &lt 3 TAB    &lt 4 BACKSPACE  &lt 1 SPACE
             >;
         };
 
         symbols {
             bindings = <
-&kp LS(EXCL)    &kp LS(AT)  &kp LS(POUND)  &kp LS(DLLR)   &kp LS(PRCNT)    &kp LS(CARET)   &kp LS(AMPS)       &kp LS(STAR)      &kp LS(LPAR)       &kp LS(RPAR)
-&kp LEFT_SHIFT  &kp MINUS   &kp LS(PLUS)   &kp LS(UNDER)  &kp EQUAL        &kp LEFT_BRACE  &kp RIGHT_BRACE    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PIPE
-&trans          &trans      &trans         &trans         &trans           &kp SQT         &kp DOUBLE_QUOTES  &kp SEMICOLON     &kp COLON          &kp BACKSLASH
-                                           &trans         &trans           &kp DELETE      &trans
-            >;
-        };
-
-        window_media {
-            bindings = <
-&kp LA(LG(N1))  &kp LA(LG(N2))  &kp LA(LG(N3))  &kp LA(LG(N4))  &kp LA(LG(N5))    &trans  &kp K_MUTE   &kp C_VOL_DN      &kp C_VOL_UP  &trans
-&kp LS(LA(A))   &kp LS(LA(X))   &kp LS(LA(D))   &kp LS(LA(F))   &kp LCMD          &kp Q   &kp LS(TAB)  &kp TAB           &kp GRAVE     &trans
-&kp LG(LS(N1))  &kp LG(LS(N2))  &kp LG(LS(N3))  &kp LG(LS(N4))  &kp LA(LS(L))     &trans  &kp C_PREV   &kp C_PLAY_PAUSE  &kp C_NEXT    &trans
-                                                &trans          &trans            &trans  &trans
+&kp EXCL     &kp AT_SIGN  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp TILDE         &kp MINUS      &kp PLUS           &kp EQUAL      &none  &none
+&kp HASH     &kp DOLLAR   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE    &kp SEMICOLON  &kp COLON          &kp PIPE       &none  &none
+&kp PERCENT  &kp CARET    &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp GRAVE         &kp SQT        &kp DOUBLE_QUOTES  &kp BACKSLASH  &none  &none
+                                                &none                  &none             &kp DELETE     &none
             >;
         };
 
         num_arrows {
             bindings = <
-&kp N1          &kp N2            &kp N3        &kp N4            &kp N5                      &kp N6                     &kp N7    &kp N8        &kp N9     &kp N0
-&kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND  &trans                      &kp LEFT                   &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans
-&trans          &trans            &trans        &trans            &kp LS(LG(LEFT_BRACKET))    &kp LS(LG(RIGHT_BRACKET))  &trans    &trans        &trans     &trans
-                                                &trans            &trans                      &trans                     &trans
+&kp N1          &kp N2            &kp N3        &kp N4                    &kp N5    &kp N6    &kp N7                     &kp N8           &kp N9             &kp N0
+&kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND          &none     &kp LEFT  &kp DOWN                   &kp UP_ARROW     &kp RIGHT          &none
+&none           &none             &none         &kp LS(LG(LEFT_BRACKET))  &none     &none     &kp LS(LG(RIGHT_BRACKET))  &personal_email  &simplecast_email  &adswizz_email
+                                                &none                     &none     &none     &none
+            >;
+        };
+
+        window_media {
+            bindings = <
+&kp LA(LG(N1))  &kp LA(LG(N2))  &kp LA(LG(N3))  &kp LA(LG(N4))  &kp LA(LG(N5))    &none  &kp K_MUTE   &kp C_VOL_DN      &kp C_VOL_UP  &kp C_BRIGHTNESS_INC
+&kp LS(LA(A))   &kp LS(LA(X))   &kp LS(LA(D))   &kp LS(LA(F))   &kp LCMD          &kp Q  &kp LS(TAB)  &kp TAB           &kp GRAVE     &kp C_BRIGHTNESS_DEC
+&kp LG(LS(N1))  &kp LG(LS(N2))  &kp LG(LS(N3))  &kp LG(LS(N4))  &kp LA(LS(L))     &none  &kp C_PREV   &kp C_PLAY_PAUSE  &kp C_NEXT    &none
+                                                &none           &none             &none  &none
             >;
         };
 
         mouse {
             bindings = <
-&trans     &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans
-&kp RG(F)  &kp RG(D)  &kp RG(V)  &kp RG(R)  &kp RG(S)    &kp RG(H)  &kp RG(J)  &kp RG(K)  &kp RG(L)  &trans
-&trans     &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans
-                                 &trans     &trans       &trans     &trans
+&none      &none      &none      &none      &none        &none      &none      &none      &none      &none
+&kp RG(F)  &kp RG(D)  &kp RG(V)  &kp RG(R)  &kp RG(S)    &kp RG(H)  &kp RG(J)  &kp RG(K)  &kp RG(L)  &none
+&none      &none      &none      &none      &none        &none      &none      &none      &none      &none
+                                 &none      &none        &none      &none
             >;
         };
 
         bootloader {
             bindings = <
-&trans       &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&bootloader  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans       &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                             &trans  &trans    &trans  &trans
+&none        &none  &none  &none  &none    &none  &none  &none  &none  &none
+&bootloader  &none  &none  &none  &none    &none  &none  &none  &none  &none
+&none        &none  &none  &none  &none    &none  &none  &none  &none  &none
+                           &none  &none    &none  &none
             >;
         };
     };
