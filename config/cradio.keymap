@@ -31,37 +31,14 @@
     combos {
         compatible = "zmk,combos";
 
-        layer5 {
+        bootloader-trigger {
+            bindings = <&mo 6>;
+            key-positions = <32 31 30 33>;
+        };
+
+        mouse-trigger {
             bindings = <&mo 5>;
-            key-positions = <32 31>;
-        };
-
-        cmd-tilde {
-            bindings = <&kp LA(LG(GRAVE))>;
-            key-positions = <12 13 31>;
-        };
-    };
-
-    macros {
-        personal_email: personal_email {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none &kp B &kp A &kp S &kp S &kp E &kp T &kp T &kp DOT &kp B &kp R &kp A &kp N &kp D &kp O &kp N &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
-            label = "PERSONAL_EMAIL";
-        };
-
-        simplecast_email: simplecast_email {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none &kp B &kp R &kp A &kp N &kp D &kp O &kp N &kp AT &kp S &kp I &kp M &kp P &kp L &kp E &kp C &kp A &kp S &kp T &kp DOT &kp C &kp O &kp M>;
-            label = "SIMPLECAST_EMAIL";
-        };
-
-        adswizz_email: adswizz_email {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none &kp B &kp R &kp A &kp N &kp D &kp O &kp N &kp DOT &kp B &kp A &kp S &kp S &kp E &kp T &kp T &kp AT &kp A &kp D &kp S &kp W &kp I &kp Z &kp Z &kp DOT &kp C &kp O &kp M>;
-            label = "ADSWIZZ_EMAIL";
+            key-positions = <31 30>;
         };
     };
 
@@ -73,7 +50,34 @@
 &kp Q             &kp W        &kp E       &kp R         &kp T        &kp Y            &kp U        &kp I       &kp O        &kp P
 &kp A             &hm LCTRL S  &hm LALT D  &hm LCMD F    &kp G        &kp H            &hm LCMD J   &hm RALT K  &hm RCTRL L  &hm CAPS ENTER
 &hm LEFT_SHIFT Z  &kp X        &kp C       &kp V         &kp B        &kp N            &kp M        &kp COMMA   &kp DOT      &hm RIGHT_SHIFT SLASH
-                                           &lt 2 ESCAPE  &lt 3 TAB    &lt 4 BACKSPACE  &lt 1 SPACE
+                                           &lt 1 ESCAPE  &lt 2 TAB    &lt 3 BACKSPACE  &lt 4 SPACE
+            >;
+        };
+
+        number {
+            bindings = <
+&trans          &trans  &trans  &trans  &trans    &trans         &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS
+&trans          &trans  &trans  &trans  &trans    &trans         &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp PLUS
+&kp LEFT_SHIFT  &trans  &trans  &trans  &trans    &trans         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp KP_ASTERISK
+                                &trans  &trans    &kp KP_DIVIDE  &kp N0
+            >;
+        };
+
+        num_arrows {
+            bindings = <
+&kp N1          &kp N2            &kp N3        &kp N4                    &kp N5    &kp N6    &kp N7                     &kp N8        &kp N9     &kp N0
+&kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND          &none     &kp LEFT  &kp DOWN                   &kp UP_ARROW  &kp RIGHT  &kp RIGHT_SHIFT
+&kp LEFT_SHIFT  &none             &none         &kp LS(LG(LEFT_BRACKET))  &none     &none     &kp LS(LG(RIGHT_BRACKET))  &none         &none      &kp RIGHT_SHIFT
+                                                &none                     &none     &none     &none
+            >;
+        };
+
+        window_media {
+            bindings = <
+&kp LA(LG(N1))  &kp LA(LG(N2))  &kp LA(LG(N3))  &kp LA(LG(N4))  &kp LA(LG(N5))    &kp LG(Q)  &kp K_MUTE       &kp C_VOL_DN      &kp C_VOL_UP   &kp C_BRIGHTNESS_INC
+&kp LS(LA(A))   &kp LS(LA(X))   &kp LS(LA(D))   &kp LS(LA(F))   &none             &none      &kp LS(LG(TAB))  &kp LG(TAB)       &kp LG(GRAVE)  &kp C_BRIGHTNESS_DEC
+&kp LG(LS(N1))  &kp LG(LS(N2))  &kp LG(LS(N3))  &kp LG(LS(N4))  &kp LA(LS(L))     &none      &kp C_PREV       &kp C_PLAY_PAUSE  &kp C_NEXT     &none
+                                                &none           &none             &none      &none
             >;
         };
 
@@ -86,30 +90,12 @@
             >;
         };
 
-        num_arrows {
-            bindings = <
-&kp N1          &kp N2            &kp N3        &kp N4                    &kp N5    &kp N6    &kp N7                     &kp N8           &kp N9             &kp N0
-&kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_COMMAND          &none     &kp LEFT  &kp DOWN                   &kp UP_ARROW     &kp RIGHT          &kp RIGHT_SHIFT
-&kp LEFT_SHIFT  &none             &none         &kp LS(LG(LEFT_BRACKET))  &none     &none     &kp LS(LG(RIGHT_BRACKET))  &personal_email  &simplecast_email  &adswizz_email
-                                                &none                     &none     &none     &none
-            >;
-        };
-
-        window_media {
-            bindings = <
-&kp LA(LG(N1))  &kp LA(LG(N2))  &kp LA(LG(N3))  &kp LA(LG(N4))  &kp LA(LG(N5))    &none  &kp K_MUTE   &kp C_VOL_DN      &kp C_VOL_UP  &kp C_BRIGHTNESS_INC
-&kp LS(LA(A))   &kp LS(LA(X))   &kp LS(LA(D))   &kp LS(LA(F))   &kp LCMD          &kp Q  &kp LS(TAB)  &kp TAB           &kp GRAVE     &kp C_BRIGHTNESS_DEC
-&kp LG(LS(N1))  &kp LG(LS(N2))  &kp LG(LS(N3))  &kp LG(LS(N4))  &kp LA(LS(L))     &none  &kp C_PREV   &kp C_PLAY_PAUSE  &kp C_NEXT    &none
-                                                &none           &none             &none  &none
-            >;
-        };
-
         mouse {
             bindings = <
-&none      &none      &none      &none      &none        &none      &none      &none      &none      &none
-&kp RG(F)  &kp RG(D)  &kp RG(V)  &kp RG(R)  &kp RG(S)    &kp RG(H)  &kp RG(J)  &kp RG(K)  &kp RG(L)  &none
-&none      &none      &none      &none      &none        &none      &none      &none      &none      &none
-                                 &none      &none        &none      &none
+&none      &none      &none      &none      &none    &none      &none      &none      &none      &none
+&kp RG(F)  &kp RG(D)  &kp RG(V)  &kp RG(R)  &none    &kp RG(H)  &kp RG(J)  &kp RG(K)  &kp RG(L)  &none
+&none      &none      &none      &none      &none    &none      &none      &none      &none      &none
+                                 &none      &none    &none      &none
             >;
         };
 
